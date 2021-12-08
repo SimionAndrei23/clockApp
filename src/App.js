@@ -1,8 +1,8 @@
 
 import './App.css';
-import ClockAccess from './Pages/ClockAccess';
-import ClockAddAlarm from './Pages/ClockAddAlarm';
-import ClockTimer from './Pages/ClockTimer';
+import ClockAccess from './pages/ClockAccess';
+import ClockAddAlarm from './pages/ClockAddAlarm';
+import ClockTimer from './pages/ClockTimer';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 
 function App() {
