@@ -1,23 +1,14 @@
-*,
-*::before,
-*::after 
+*
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,body {
+body {
+  font-family: 'Dancing Script', cursive;
   overflow-x: hidden;
 }
-
-body {
-  
-  font-family: 'Corinthia', cursive;
-  font-family: 'Dancing Script', cursive;
-
-}
-
 
 .App {
   position: relative;
@@ -32,18 +23,6 @@ body {
   background-position: center;
 }
 
-/*.App::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f0ecfc;
-  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
-  mix-blend-mode: multiply;
-}*/
-
 .wrapperClock {
   position: relative;
   width: clamp(25rem,50%,30rem);
@@ -57,7 +36,7 @@ body {
             5px 5px 15px rgba(0,0,0,0.3),
             -5px -5px 15px rgba(255,255,255,0.1);
   transition: all 0.5s ease-out;
-  margin-inine: 20px;
+  margin-top: 20px;
 }
 
 .wrapperInside {
@@ -83,7 +62,7 @@ body {
     left: 10%;
     width: 10rem;
     height: 10rem;
-    background-color: #ff359b;
+    background-color: #a88beb;
 }
 
 .box2 {
@@ -91,7 +70,7 @@ body {
     right: 10%;
     width: 10rem;
     height: 10rem;
-    background-color: #00d2ff;
+    background-color: #ff8489;
 }
 
 .box3 {
@@ -99,7 +78,7 @@ body {
     right: 10%;
     width: 10rem;
     height: 10rem;
-    background-color: #fffd87;
+    background-color: #9795ef;
 }
 
 @keyframes  animateIN {
@@ -112,7 +91,6 @@ body {
     transform: scale(1)
   }
 }
-
 
 .wrapperInside::before {
   content: '';
@@ -158,7 +136,6 @@ header
   border-radius: 50%;
   background: #EEF0F4;
   box-shadow: inset 9.91px 9.91px 15px #E8EAEE, inset -9.91px -9.91px 15px #F4F6FA;
-
 }
 
 .clockWrapper
@@ -308,27 +285,13 @@ header
   left: 10%;
 }
 
-.time {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-}
 
-.time h3,
-.time p {
-  display: block;
+.time h3 {
+  margin-top: 3rem;
   font-weight: 700;
-  font-family: 'Corinthia', cursive;
-  font-family: 'Dancing Script', cursive;
+  text-align: center;
 }
 
-.time p {
-  margin-top: 20px;
-  font-size: 1.2rem;
-}
 
 .bottomTabs {
   position: absolute;
@@ -340,7 +303,7 @@ header
   justify-content: space-evenly;
   align-items: center;
   background-color: #d9e4f5;
-background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+  background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
   border-radius: 0 0 15px 15px;
 }
 
@@ -760,6 +723,36 @@ background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
 
 @media (max-width: 768px) {
 
+  .clock {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .hour_hand {
+    top: 53px;
+    height: 50px;
+  }
+
+  .minute_hand {
+    top: 45px;
+    height: 58px;
+  }
+
+  .second_hand {
+    top: 40px;
+    height: 63px;
+  }
+
+  .five {
+    top: 80%;
+    right: 55px;
+  }
+
+  .seven {
+    top: 80%;
+    left: 60px;
+  }
+
   .alarmTification > p {
     font-size: 1rem;
   }
@@ -796,6 +789,5 @@ background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
     right: 0;
     animation: animationContainer2 10s ease-in-out infinite;
   }
-
 }
 

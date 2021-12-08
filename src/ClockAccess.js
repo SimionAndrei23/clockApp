@@ -2,11 +2,11 @@ import React, { useEffect, useState} from 'react'
 import Lottie from 'react-lottie';
 import animationData from './files/clock-animation.json';
 import { dataTabs } from './sampleData/tabsBottomData'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ClockAccess = () => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const keyAPI = '67db815d4444a145f0b3c788d2156269';
 
@@ -45,17 +45,17 @@ const ClockAccess = () => {
     
         if(name === 'Access') {
     
-            history.push('/')
+            navigate('/')
     
         }
     
         else if(name === 'AddAlarm') {
     
-            history.push('/addAlarm')
+            navigate('/addAlarm')
         }
     
         else if (name === 'Timer') {
-            history.push('/clockTimer')
+            navigate('/clockTimer')
         }
     
        }
@@ -73,26 +73,6 @@ const ClockAccess = () => {
     return () => clearInterval(timeId)
    },1000)
  
-   useEffect(async () => {
-       if(navigator.geolocation) {
-              return navigator.geolocation.getCurrentPosition((position) => {
-               setLatitude(position.coords.latitude);
-               setLongitude(position.coords.longitude);
-           })
-       }
-       await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=` + `${keyAPI}`)
-        .then(result => result.json())
-        .then(data => setLocation(data))
-
-   },[latitude,longitude])
-
-   useEffect(async () => {
-        await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=` + `${keyAPI}`)
-        .then(result => result.json())
-        .then(data => setLocation(data))
-   },[latitude,longitude])
-   
-   
     return (
             <div className="wrapperClock">
                 <div className="wrapperInside">
@@ -130,10 +110,9 @@ const ClockAccess = () => {
                             </div>
                      </div>
                         <div className = 'time'>
-                            <h3>{time}</h3>
-                            <p>{location?.timezone}</p>
+                            <h3> {time} </h3>
                         </div>
-                        <div className = 'bottomTabs'>
+                        <nav className = 'bottomTabs'>
                            <>
                             {dataTabs?.map((dataValue,index) => (                         
                                 <div key = {index} className = 'tabWrapper'>
@@ -154,7 +133,7 @@ const ClockAccess = () => {
                                 </div>                            
                             ))}
                            </>
-                        </div>
+                        </nav>
                 </div>
             </div>
     )

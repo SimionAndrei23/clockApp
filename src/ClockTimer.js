@@ -4,12 +4,12 @@ import stopWatchIcon2 from './files/deadline.png'
 import Lottie from 'react-lottie';
 import animationData from './files/clock-animation.json';
 import { dataTabs } from './sampleData/tabsBottomData'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const ClockTimer = () => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const [activeTab, setActiveTab] = useState('Timer')
     const [second, setSecond] = useState('00');
@@ -64,15 +64,15 @@ const ClockTimer = () => {
     
         if(name === 'Access') {
 
-            history.push('/')
+            navigate('/')
     
         }
         else if(name === 'AddAlarm') {
     
-            history.push('/addAlarm')
+            navigate('/addAlarm')
         }
         else if (name === 'Timer') {
-            history.push('/clockTimer')
+            navigate('/clockTimer')
         }
     }
 

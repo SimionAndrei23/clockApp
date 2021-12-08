@@ -8,12 +8,12 @@ import { dataTabs } from './sampleData/tabsBottomData'
 import Fade from 'react-reveal/Fade';
 import Timekeeper from 'react-timekeeper'; 
 import DataAlarms from './DataAlarms';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const ClockAddAlarm = () => {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const [activeTab, setActiveTab] = useState('AddAlarm')
     const [addAlarm, setAddAlarm] = useState(false);
@@ -67,15 +67,15 @@ const ClockAddAlarm = () => {
 
         if(name === 'Access') {
 
-            history.push('/')
+            navigate('/')
     
         }
         else if(name === 'AddAlarm') {
     
-            history.push('/addAlarm')
+            navigate('/addAlarm')
         }
         else if (name === 'Timer') {
-            history.push('/clockTimer')
+            navigate('/clockTimer')
         }
     }
 
@@ -112,6 +112,9 @@ const ClockAddAlarm = () => {
     return (
         <div className = 'wrapperClock'>
             <div className = 'wrapperInside'>
+                <div className="boxContent box1"></div>
+                <div className="boxContent box2"></div>
+                <div className="boxContent box3"></div>
                 <header>          
                     <div>  
                         <Lottie

@@ -4,18 +4,12 @@ import React, { useEffect, useState, useRef } from 'react'
 const DataAlarms = ({index,alarmDate,checked,setChecked,setIsAlarmChecked, setStatsAlarm}) => {
 
     const refLabel = useRef(null)
-
     const [alarmStats, setAlarmStats] = useState('')
-
+    
     const checkHours = 24 - alarmStats?.hour == 1 ? ' hour ' : ' hours '
-    console.log(24 - alarmStats?.hour);
-
     const finalHours = alarmStats?.hour >= 1 ? 24 - alarmStats?.hour + checkHours : ''
-
     const checkMinutes = alarmStats?.minute - 6 == 1 ? ' minute. ' : ' minutes. '
-
     const finalMinutes = alarmStats?.minute - 6 >= 1 ? alarmStats?.minute - 6 + checkMinutes : ''
-
     const setTime =  finalHours + finalMinutes
 
     const time = alarmDate?.slice(9,alarmDate?.length)
