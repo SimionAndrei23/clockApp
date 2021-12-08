@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import stopWatchIcon1 from './files/stopwatch.png'
-import stopWatchIcon2 from './files/deadline.png'
+import stopWatchIcon1 from '../Files/stopwatch.png'
+import stopWatchIcon2 from '../Files/deadline.png'
+import animationData from '../Files/clock-animation.json';
 import Lottie from 'react-lottie';
-import animationData from './files/clock-animation.json';
-import { dataTabs } from './sampleData/tabsBottomData'
+import { dataTabs } from '../SampleData/tabsBottomData'
 import { useNavigate } from 'react-router-dom';
 
 

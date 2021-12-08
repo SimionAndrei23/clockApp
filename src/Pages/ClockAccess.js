@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import Lottie from 'react-lottie';
-import animationData from './files/clock-animation.json';
-import { dataTabs } from './sampleData/tabsBottomData'
+import animationData from '../Files/clock-animation.json';
+import { dataTabs } from '../SampleData/tabsBottomData'
 import { useNavigate } from 'react-router-dom';
 
 const ClockAccess = () => {

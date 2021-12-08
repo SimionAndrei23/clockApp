@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react'
-import check from './files/check.png'
+import checkIcon from '../Files/check.png'
+import animationClock from '../Files/clock-animation.json';
 import AddIcon from '@mui/icons-material/Add';
 import { IconButton } from '@mui/material';
 import Lottie from 'react-lottie';
-import animationClock from './files/clock-animation.json';
-import { dataTabs } from './sampleData/tabsBottomData'
+import { dataTabs } from '../SampleData/tabsBottomData'
 import Fade from 'react-reveal/Fade';
 import Timekeeper from 'react-timekeeper'; 
 import DataAlarms from './DataAlarms';
@@ -178,7 +178,7 @@ const ClockAddAlarm = () => {
                         <div onClick = {setButton} className = 'doneButton'>
                             <p>Done</p>
                             <div className = 'checkIcon'>
-                                <img src = {check} />
+                                <img src = {checkIcon} alt = 'checkIcon' />
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 *
 {
   margin: 0;
@@ -7,7 +9,6 @@
 
 body {
   font-family: 'Dancing Script', cursive;
-  overflow-x: hidden;
 }
 
 .App {
@@ -18,7 +19,7 @@ body {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  background: url('../src/files/timeBackground.jpg');
+  background: url('./Files/timeBackground.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -36,7 +37,7 @@ body {
             5px 5px 15px rgba(0,0,0,0.3),
             -5px -5px 15px rgba(255,255,255,0.1);
   transition: all 0.5s ease-out;
-  margin-top: 20px;
+  margin: 0 20px;
 }
 
 .wrapperInside {
@@ -219,10 +220,7 @@ header
 
 .clock span {
   position: absolute;
-  font-family: 'Corinthia', cursive;
-  font-family: 'Dancing Script', cursive;
   font-weight: 600;
-  
 }
 
 .twelve {
@@ -723,6 +721,7 @@ header
 
 @media (max-width: 768px) {
 
+
   .clock {
     width: 13rem;
     height: 13rem;
@@ -759,7 +758,7 @@ header
 
   .alarmSet p,
   .quoteAlarm p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .alarmTime > h2 {
