@@ -76,14 +76,14 @@ const ClockAddAlarm = () => {
         }
     }
 
-    /*useEffect(() => {
+    useEffect(() => {
        if(isAlarmChecked) {
         const timer = setTimeout(() => {
             setIsAlarmChecked(false)
         },2000)
         return () => clearTimeout(timer)
        }
-     },[isAlarmChecked])*/
+     },[isAlarmChecked])
 
     useEffect(() => {
         const alarms = localStorage.getItem('alarms')
