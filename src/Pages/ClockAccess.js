@@ -8,11 +8,6 @@ const ClockAccess = () => {
 
     const navigate = useNavigate();
 
-    const keyAPI = '67db815d4444a145f0b3c788d2156269';
-
-    const [latitude, setLatitude] = useState('')
-    const [longitude, setLongitude] = useState('')
-    const [location, setLocation] = useState();
     const [activeTab, setActiveTab] = useState('Access')
     const [defaultClock, setDefaultClock] = useState({ time: new Date() })
 

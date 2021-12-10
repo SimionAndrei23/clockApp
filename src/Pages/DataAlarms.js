@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 const DataAlarms = ({index,alarmDate,checked,setChecked,setIsAlarmChecked, setStatsAlarm}) => {
 
-    const refLabel = useRef(null)
     const [alarmStats, setAlarmStats] = useState('')
     
     const checkHours = 24 - alarmStats?.hour == 1 ? ' hour ' : ' hours '
@@ -21,12 +20,12 @@ const DataAlarms = ({index,alarmDate,checked,setChecked,setIsAlarmChecked, setSt
     const setAnotherHour = getFirstMinute.join('');
     const timeArr = sliceTime.join('');
     const newSplitTime = timeArr.slice(-2);
-    const final = setAnotherHour + ' ' + newSplitTime
-    const date = final?.toUpperCase()
+    const date = setAnotherHour.toUpperCase();
+    const timePMAM = newSplitTime.toUpperCase();
 
     const currentData = new Date();
 
-    const diffInMilliseconds = Math.abs(new Date(currentData) - new Date(alarmDate));
+    const diffInMilliseconds = Math.abs(Date.parse(currentData) - Date.parse(alarmDate));
       
     const convertToMS = (milliseconds) => {
         let day, hour, minute, seconds;
@@ -73,11 +72,12 @@ const DataAlarms = ({index,alarmDate,checked,setChecked,setIsAlarmChecked, setSt
     return (
         <div key = {index} className = 'alarmUP'>
             <div className = 'alarmTime'>
-                <h2> {date} </h2>
+                <h2>{date}</h2>
+                <h2>{timePMAM}</h2>
             </div>
             <label>
                 <input type = 'checkbox' id = 'checkInput' />
-                <span ref = {refLabel} onClick = {handleNotification} className = 'check'></span>
+                <span  onClick = {handleNotification} className = 'check'></span>
             </label>
         </div>
     )

@@ -21,26 +21,23 @@ const ClockAddAlarm = () => {
     const [doneButton ,setDoneButton] = useState(false)
     const [dataAlarms, setDataAlarms] = useState([
         {
-            date: '6-12-2021 10:00 AM'
+            date: '6/12/2021 10:00 AM'
         },
         {
-            date: '6-12-2021 8:15 AM'
+            date: '6/12/2021 8:15 AM'
         },
-        {
-            date: '6-12-2021 9:30 AM'
-        }
     ])
 
     const [checked, setChecked] = useState(false)
     const [isAlarmChecked, setIsAlarmChecked] = useState(false)
-    const [statsAlarm ,setStatsAlarm] = useState()
+    const [statsAlarm,setStatsAlarm] = useState()
 
     const dateCurrent = new Date();
 
     let day = dateCurrent.getDate();
     let month = dateCurrent.getMonth() + 1;
     let year = dateCurrent.getFullYear();
-    let today = day + '-' + month + '-' + year;
+    let today = day + '/' + month + '/' + year;
 
     const dateSelectedSplit = today.split('');
     const charSelected = dateSelectedSplit.push(' ' + time);
@@ -79,14 +76,14 @@ const ClockAddAlarm = () => {
         }
     }
 
-    useEffect(() => {
+    /*useEffect(() => {
        if(isAlarmChecked) {
         const timer = setTimeout(() => {
             setIsAlarmChecked(false)
         },2000)
         return () => clearTimeout(timer)
        }
-     },[isAlarmChecked])
+     },[isAlarmChecked])*/
 
     useEffect(() => {
         const alarms = localStorage.getItem('alarms')
